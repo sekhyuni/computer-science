@@ -19,10 +19,10 @@ function solution(s) {
 }
 
 function isPalindrome(s) {
-    const legnthOfSubString = s.length;
+    const lengthOfSubString = s.length;
 
-    for (let i = 1; i < legnthOfSubString; i++) {
-        if (s[i] !== s[legnthOfSubString - 1 - i]) {
+    for (let i = 1; i < lengthOfSubString; i++) {
+        if (s[i] !== s[lengthOfSubString - 1 - i]) {
             return false;
         }
     }
