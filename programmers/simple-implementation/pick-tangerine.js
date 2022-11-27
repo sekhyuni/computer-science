@@ -1,7 +1,7 @@
 function solution(k, tangerine) {
     let min = 1;
 
-    const mapOfTangerineSize = {}
+    const mapOfTangerineSize = {};
     for (let i = 0, len = tangerine.length; i < len; i++) {
         if (mapOfTangerineSize[tangerine[i]] === undefined) {
             mapOfTangerineSize[tangerine[i]] = 0;
