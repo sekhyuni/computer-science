@@ -95,7 +95,7 @@
             console.timeEnd('[Queue] Search Time Complexity is O(n)');
             console.time('[Queue] Deletion Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
-                queue.shift(); // Time Complexity: dequeue < shift < splice, but, sometimes using shift is no problem
+                queue.shift(); // Actually, Time Complexity of shift is not O(1), but O(n). However, Time Complexity: dequeue < shift < splice. So, sometimes using shift is no problem
             }
             console.timeEnd('[Queue] Deletion Time Complexity is O(1)');
         ```
