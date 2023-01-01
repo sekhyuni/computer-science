@@ -23,7 +23,7 @@ console.log(twoSum([3, 2, 4], 6))
 const twoSumByBruteForce = function (nums, target) {
     const lengthOfNums = nums.length;
     for (let i = 0; i < lengthOfNums; i++) {
-        for (let j = 0; j < lengthOfNums; j++) {
+        for (let j = i + 1; j < lengthOfNums; j++) {
             if (i !== j && nums[i] + nums[j] === target) {
                 return [i, j];
             }
