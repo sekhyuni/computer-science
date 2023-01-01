@@ -109,6 +109,26 @@
 # Algorithm
 1. Binary Search
     - Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n). 
+        ```javascript
+            const binarySearch = (array, target) => {
+                let start = 0;
+                let end = array.length - 1;
+
+                while (start <= end) {
+                    const mid = Math.floor((start + end) / 2);
+
+                    if (array[mid] === target) {
+                        return mid;
+                    } else if (array[mid] > target) {
+                        end = mid - 1;
+                    } else {
+                        start = mid + 1;
+                    }
+                }
+
+                return -1;
+            };
+        ```
 1. Sorting
     - A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of elements in the respective data structure.
 1. Recursion
