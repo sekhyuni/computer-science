@@ -22,7 +22,7 @@
 1. Recursion
     - The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function.
 1. Dynamic Programming
-    - Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial.
+    - Update later..
 1. BFS & DFS
     - Update later..
 1. Backtracking
