@@ -133,6 +133,13 @@
         ```
 1. Sorting
     - A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of elements in the respective data structure.
+    - stable vs not stable
+        - stable 정렬은 중복된 key 값이 있을 때 이를 순서대로 정렬하는 정렬 알고리즘이고, not stable 정렬은 순서대로 정렬되지 않는 정렬 알고리즘
+    - in-place vs not in-place 
+        - in-place 정렬은 원소들의 개수에 비해 충분히 무시할만한 저장 공간만을 더 사용하는 정렬 알고리즘이고, not in-place 정렬은 원소들의 개수에 비례하여 저장 공간을 더 사용하는 정렬 알고리즘
+        - stable, in-place 정렬로는 Bubble Sort (Time Complexity: O(n^2), Space Complexity: O(1))가 있음
+        - not stable, in-place 정렬로는 Selection Sort (Time Complexity: O(n^2), Space Complexity: O(1))가 있음
+        - stable, not in-place 정렬로는 Merge Sort (Time Complexity: O(nlogn), Space Complexity: O(n))가 있음
 1. Recursion
     - The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function.
 1. Dynamic Programming
