@@ -26,6 +26,8 @@
         ```
 1. Hash Table
     - Hashing is a technique or process of mapping keys, and values into the hash table by using a hash function. It is done for faster access to elements. The efficiency of mapping depends on the efficiency of the hash function used.
+    - HashTable vs HashMap
+        - HashTable은 Thread-Safe하고, HashMap은 그렇지 않다. 따라서, Multi-Thread 환경이 아니라면, HashTable은 HashMap보다 성능이 떨어진다는 단점이 있음
     - Time Complexity:
         |Data Structure|Access|Search|Insertion|Deletion|
         |:---:|:---:|:---:|:---:|:---:|
