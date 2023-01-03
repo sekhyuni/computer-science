@@ -1,5 +1,6 @@
 const array = [];
-const hashTable = {};
+const hashTableByObject = {};
+const hashTableByMap = new Map();
 const stack = [];
 const queue = [];
 
@@ -20,22 +21,39 @@ for (let i = 0; i < 50000; i++) {
 }
 console.timeEnd('[Array] Deletion Time Complexity is O(n)');
 
-// Hash Table
-console.time('[Hash Table] Insertion Time Complexity is O(1)');
+// Hash Table By Object
+console.time('[Hash Table By Object] Insertion Time Complexity is O(1)');
 for (let i = 0; i < 50000; i++) {
-    hashTable[i] = i;
+    hashTableByObject[i] = i;
 }
-console.timeEnd('[Hash Table] Insertion Time Complexity is O(1)');
-console.time('[Hash Table] Search Time Complexity is O(1)');
+console.timeEnd('[Hash Table By Object] Insertion Time Complexity is O(1)');
+console.time('[Hash Table By Object] Search Time Complexity is O(1)');
 for (let i = 0; i < 50000; i++) {
-    if (hashTable.hasOwnProperty(i)) { }
+    if (hashTableByObject.hasOwnProperty(i)) { }
 }
-console.timeEnd('[Hash Table] Search Time Complexity is O(1)');
-console.time('[Hash Table] Deletion Time Complexity is O(1)');
+console.timeEnd('[Hash Table By Object] Search Time Complexity is O(1)');
+console.time('[Hash Table By Object] Deletion Time Complexity is O(1)');
 for (let i = 0; i < 50000; i++) {
-    delete hashTable[i];
+    delete hashTableByObject[i];
 }
-console.timeEnd('[Hash Table] Deletion Time Complexity is O(1)');
+console.timeEnd('[Hash Table By Object] Deletion Time Complexity is O(1)');
+
+// Hash Table By Map
+console.time('[Hash Table By Map] Insertion Time Complexity is O(1)');
+for (let i = 0; i < 50000; i++) {
+    hashTableByMap.set(i, i);
+}
+console.timeEnd('[Hash Table By Map] Insertion Time Complexity is O(1)');
+console.time('[Hash Table By Map] Search Time Complexity is O(1)');
+for (let i = 0; i < 50000; i++) {
+    if (hashTableByMap.has(i)) { }
+}
+console.timeEnd('[Hash Table By Map] Search Time Complexity is O(1)');
+console.time('[Hash Table By Map] Deletion Time Complexity is O(1)');
+for (let i = 0; i < 50000; i++) {
+    hashTableByMap.delete(i);
+}
+console.timeEnd('[Hash Table By Map] Deletion Time Complexity is O(1)');
 
 // Stack
 console.time('[Stack] Insertion Time Complexity is O(1)');
@@ -75,9 +93,9 @@ console.timeEnd('[Queue] Deletion Time Complexity is O(1)');
 // [Array] Search Time Complexity is O(n): 1.694s
 // [Array] Deletion Time Complexity is O(n): 925.122ms
 
-// [Hash Table] Insertion Time Complexity is O(1): 1.681ms
-// [Hash Table] Search Time Complexity is O(1): 1.704ms
-// [Hash Table] Deletion Time Complexity is O(1): 4.14ms
+// [Hash Table By Object] Insertion Time Complexity is O(1): 1.681ms
+// [Hash Table By Object] Search Time Complexity is O(1): 1.704ms
+// [Hash Table By Object] Deletion Time Complexity is O(1): 4.14ms
 
 // [Stack] Insertion Time Complexity is O(1): 2.979ms
 // [Stack] Search Time Complexity is O(n): 1.612s

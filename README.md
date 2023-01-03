@@ -7,7 +7,6 @@
         |Array|O(1)|O(n)|O(n)|O(n)|
         ```javascript
             const array = [];
-
             console.time('[Array] Insertion Time Complexity is O(n)');
             for (let i = 0; i < 50000; i++) {
                 array.splice(i, 0, i);
@@ -28,28 +27,46 @@
     - Hashing is a technique or process of mapping keys, and values into the hash table by using a hash function. It is done for faster access to elements. The efficiency of mapping depends on the efficiency of the hash function used.
     - HashTable vs HashMap
         - HashTable은 Thread-Safe하고, HashMap은 그렇지 않다. 따라서, Multi-Thread 환경이 아니라면, HashTable은 HashMap보다 성능이 떨어진다는 단점이 있음
+    - V8 Engine에서 Map은 Hash Table로 구현되어 있음
+    - V8 Engine에서 Object는 Hash Table로 구현되어 있지 않은 것으로 알려짐
     - Time Complexity:
         |Data Structure|Access|Search|Insertion|Deletion|
         |:---:|:---:|:---:|:---:|:---:|
         |Hash Table|N/A|O(1)|O(1)|O(1)|
         ```javascript
-            const hashTable = {};
+            const hashTableByObject = {};
+            console.time('[Hash Table By Object] Insertion Time Complexity is O(1)');
+            for (let i = 0; i < 50000; i++) {
+                hashTableByObject[i] = i;
+            }
+            console.timeEnd('[Hash Table By Object] Insertion Time Complexity is O(1)');
+            console.time('[Hash Table By Object] Search Time Complexity is O(1)');
+            for (let i = 0; i < 50000; i++) {
+                if (hashTableByObject.hasOwnProperty(i)) { }
+            }
+            console.timeEnd('[Hash Table By Object] Search Time Complexity is O(1)');
+            console.time('[Hash Table By Object] Deletion Time Complexity is O(1)');
+            for (let i = 0; i < 50000; i++) {
+                delete hashTableByObject[i];
+            }
+            console.timeEnd('[Hash Table By Object] Deletion Time Complexity is O(1)');
 
-            console.time('[Hash Table] Insertion Time Complexity is O(1)');
+            const hashTableByMap = new Map();
+            console.time('[Hash Table By Map] Insertion Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
-                hashTable[i] = i;
+                hashTableByMap.set(i, i);
             }
-            console.timeEnd('[Hash Table] Insertion Time Complexity is O(1)');
-            console.time('[Hash Table] Search Time Complexity is O(1)');
+            console.timeEnd('[Hash Table By Map] Insertion Time Complexity is O(1)');
+            console.time('[Hash Table By Map] Search Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
-                if (hashTable.hasOwnProperty(i)) { }
+                if (hashTableByMap.has(i)) { }
             }
-            console.timeEnd('[Hash Table] Search Time Complexity is O(1)');
-            console.time('[Hash Table] Deletion Time Complexity is O(1)');
+            console.timeEnd('[Hash Table By Map] Search Time Complexity is O(1)');
+            console.time('[Hash Table By Map] Deletion Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
-                delete hashTable[i];
+                hashTableByMap.delete(i);
             }
-            console.timeEnd('[Hash Table] Deletion Time Complexity is O(1)');
+            console.timeEnd('[Hash Table By Map] Deletion Time Complexity is O(1)');
         ```
 1. Stack
     - Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
@@ -59,7 +76,6 @@
         |Stack|O(n)|O(n)|O(1)|O(1)|
         ```javascript
             const stack = [];
-
             console.time('[Stack] Insertion Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
                 stack.push(i);
@@ -84,7 +100,6 @@
         |Stack|O(n)|O(n)|O(1)|O(1)|
         ```javascript
             const queue = [];
-
             console.time('[Queue] Insertion Time Complexity is O(1)');
             for (let i = 0; i < 50000; i++) {
                 queue.push(i); // equal enqueue
