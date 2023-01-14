@@ -21,3 +21,5 @@
 ## [Network](https://github.com/sekhyuni/computer-science/blob/main/network/README.md)
 
 ## [Operating System](https://github.com/sekhyuni/computer-science/blob/main/operating-system/README.md)
+- Process and Thread
+- Concurrency vs Parallelism
