@@ -3,13 +3,13 @@
 
 ## [Data Structure](https://github.com/sekhyuni/computer-science/blob/main/data-structure/README.md)
 - [ ] Array
-- [ ] HashTable
 - [ ] Stack
 - [ ] Queue
-- [ ] Heap
+- [ ] Linked List
+- [ ] Hash Table
 - [ ] Graph
 - [ ] Tree
-- [ ] Linked List
+- [ ] Heap
 
 ## [Algorithm](https://github.com/sekhyuni/computer-science/blob/main/algorithm/README.md)
 - [ ] Binary Search
