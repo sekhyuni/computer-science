@@ -4,7 +4,8 @@
 * [Sorting](#sorting)
 * [Recursion](#recursion)
 * [Dynamic Programming](#dynamic-programming)
-* [BFS and DFS](#bfs-and-dfs)
+* [BFS](#bfs)
+* [DFS](#dfs)
 * [Backtracking](#backtracking)
 
 ## Binary Search
@@ -54,7 +55,12 @@
 
 [메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
 [맨 위로 가기](#algorithm)
-## BFS and DFS
+## BFS
+- Update later..
+
+[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[맨 위로 가기](#algorithm)
+## DFS
 - Update later..
 
 [메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>

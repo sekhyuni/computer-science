@@ -5,8 +5,9 @@
 * [Stack](#stack)
 * [Queue](#queue)
 * [Heap](#heap)
+* [Graph](#graph)
+* [Tree](#tree)
 * [Linked List](#linked-list)
-* [Graph and Tree](#graph-and-tree)
 
 ## Array
 - An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
@@ -142,12 +143,17 @@
 
 [메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
 [맨 위로 가기](#data-structure)
-## Linked List
+## Graph
 - Update later..
 
 [메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
 [맨 위로 가기](#data-structure)
-## Graph and Tree
+## Tree
+- Update later..
+
+[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[맨 위로 가기](#data-structure)
+## Linked List
 - Update later..
 
 [메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>

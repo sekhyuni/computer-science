@@ -7,15 +7,17 @@
 - Stack
 - Queue
 - Heap
+- Graph
+- Tree
 - Linked List
-- Graph and Tree
 
 ## [Algorithm](https://github.com/sekhyuni/computer-science/blob/main/algorithm/README.md)
 - Binary Search
 - Sorting
 - Resursion
 - Dynamic Programming
-- BFS and DFS
+- BFS
+- DFS
 - Backtracking
 
 ## [Network](https://github.com/sekhyuni/computer-science/blob/main/network/README.md)
