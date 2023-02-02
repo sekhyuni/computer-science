@@ -13,7 +13,7 @@
     - 쓰레드는 프로세스 내에서 Stack을 제외한 모든 시스템 자원을 공유하면서 실행됨
 1. Multi Process vs Multi Thread
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#operating-system)
 ## Concurrency vs Parallelism
 1. 동시성
@@ -25,5 +25,5 @@
     - 멀티 코어에서 멀티 쓰레드를 동작시키는 방식
     - 물리적인 개념
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#operating-system)

@@ -37,7 +37,7 @@
         console.timeEnd('[Array] Deletion Time Complexity is O(n)');
     ```
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Stack
 - [선형 구조] Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
@@ -64,7 +64,7 @@
         console.timeEnd('[Stack] Deletion Time Complexity is O(1)');
     ```
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Queue
 - [선형 구조] A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
@@ -91,13 +91,13 @@
         console.timeEnd('[Queue] Deletion Time Complexity is O(1)');
     ```
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Linked List
 - [선형 구조]
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Hash Table
 - [비선형 구조] 해시 테이블은 데이터가 Key-Value 쌍으로 저장된 구조
@@ -147,23 +147,23 @@
         console.timeEnd('[Hash Table By Map] Deletion Time Complexity is O(1)');
     ```
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Graph
 - [비선형 구조]
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Tree
 - [비선형 구조]
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Heap
 - [비선형 구조]
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)

@@ -14,7 +14,7 @@
 ## [Algorithm](https://github.com/sekhyuni/computer-science/blob/main/algorithm/README.md)
 - [ ] Binary Search
 - [ ] Sorting
-- [ ] Resursion
+- [ ] Recursion
 - [ ] Dynamic Programming
 - [ ] BFS
 - [ ] DFS
@@ -25,3 +25,6 @@
 ## [Operating System](https://github.com/sekhyuni/computer-science/blob/main/operating-system/README.md)
 - [ ] Process and Thread
 - [x] Concurrency vs Parallelism
+
+## [ETC](https://github.com/sekhyuni/computer-science/blob/main/etc/README.md)
+- [ ] Encoding and Decoding

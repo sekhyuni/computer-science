@@ -31,7 +31,7 @@
         };
     ```
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Sorting
 - A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of elements in the respective data structure.
@@ -43,30 +43,30 @@
     - not stable, in-place 정렬로는 Selection Sort (Time Complexity: O(n^2), Space Complexity: O(1))가 있음
     - stable, not in-place 정렬로는 Merge Sort (Time Complexity: O(nlogn), Space Complexity: O(n))가 있음
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Recursion
 - The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function.
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Dynamic Programming
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## BFS
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## DFS
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Backtracking
 - Update later..
 
-[메인으로 가기](https://github.com/sekhyuni/frontend-basic-concept)</br>
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
