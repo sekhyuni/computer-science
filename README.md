@@ -26,5 +26,5 @@
 - [ ] Process and Thread
 - [x] Concurrency vs Parallelism
 
-## [ETC](https://github.com/sekhyuni/computer-science/blob/main/etc/README.md)
+## [Computer Structure](https://github.com/sekhyuni/computer-science/blob/main/computer-structure/README.md)
 - [ ] Encoding and Decoding
