@@ -27,4 +27,4 @@
 - [x] Concurrency vs Parallelism
 
 ## [Computer Structure](https://github.com/sekhyuni/computer-science/blob/main/computer-structure/README.md)
-- [ ] Encoding and Decoding
+- [x] Encoding and Decoding
