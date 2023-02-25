@@ -16,7 +16,7 @@
 //      - memo[m][n] = memo[m - 1][n] + memo[m][n - 1]
 //      - memo[i][1] = 1, memo[1][j] = 1
 const uniquePaths = function (m, n) {
-  let countOfUniquePaths = 0;
+  let countOfUniquePaths = 1;
   const memo = Array.from({ length: m + 1 }, () => new Array(n + 1));
 
   for (let i = 1; i <= m; i++) {
