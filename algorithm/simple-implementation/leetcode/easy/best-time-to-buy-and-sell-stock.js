@@ -33,5 +33,5 @@ const maxProfit = function (prices) {
   return maxProfit;
 };
 
-maxProfit([7, 1, 5, 3, 6, 4]);
-maxProfit([2, 4, 1]);
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(maxProfit([2, 4, 1]));
