@@ -9,7 +9,15 @@
 * [Backtracking](#backtracking)
 
 ## Binary Search
-- Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n). 
+- 정렬된 배열에서 길이를 반씩 줄여나가면서 원하는 결과값을 도출해내는 것
+- 접근 순서
+    1. 어떤 상태를 탐색할 것인지 확인
+    1. 해당 상태가 배열에서 정렬되어있는지 확인
+        - 정렬되지 않았다면, 정렬 수행
+    1. 해당 상태의 시작값과 끝값을 start, end에 할당
+    1. start와 end가 같아질 때까지 loop를 통해 mid에 중간값을 할당하면서 특정 조건에 부합하는 값 도출
+        - 특정 조건에 부합하지 않았다면, start에 mid + 1을 할당하거나 end에 mid - 1을 할당
+- 예시 코드
     ```javascript
         const binarySearch = (array, target) => {
             let start = 0;
@@ -51,12 +59,35 @@
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Dynamic Programming
-- 하위 문제의 결과를 메모이제이션 해두고, 나중에 필요할 때 참조해서 쓰는 것
+- 하위 문제의 결과값을 메모이제이션 해두고, 이를 참조해서 상위 문제의 결과값을 도출해내는 것 (Bottom-Up 방식)
 - 접근 순서
-    - 점화식으로 나타낼 수 있는 상태가 있는지 확인
-    - 해당 상태를 index로 하는 메모이제이션 배열 선언
-    - 점화식을 풀기 위한 초기값 할당
-    - loop를 통해 값 도출
+    1. 어떤 상태를 점화식으로 세울 것인지 확인
+    1. 해당 상태를 index로 하는 메모이제이션 배열 선언
+    1. 점화식을 풀기 위한 초기값 할당
+    1. loop를 통해 값 도출
+- 예시 코드
+    ```javascript
+        const dynamicProgramming = (n) => {
+            let fibonacciNumber = 0;
+            const memo = Array.from({ length: n + 1 }, (_, idx) => {
+                if (idx === 0) {
+                return 0;
+                } else if (idx === 1) {
+                return 1;
+                } else {
+                return 0;
+                }
+            });
+
+            for (let i = 2; i <= n; i++) {
+                memo[i] = memo[i - 1] + memo[i - 2];
+            }
+
+            fibonacciNumber = memo[n];
+
+            return fibonacciNumber;
+        };
+    ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
