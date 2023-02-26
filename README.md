@@ -3,8 +3,8 @@
 
 ## [Data Structure](https://github.com/sekhyuni/computer-science/blob/main/data-structure/README.md)
 - [x] Array
-- [ ] Stack
-- [ ] Queue
+- [x] Stack
+- [x] Queue
 - [ ] Linked List
 - [x] Hash Table
 - [ ] Graph
@@ -12,10 +12,10 @@
 - [ ] Heap
 
 ## [Algorithm](https://github.com/sekhyuni/computer-science/blob/main/algorithm/README.md)
-- [ ] Binary Search
-- [ ] Sorting
+- [x] Binary Search
+- [x] Sorting
 - [ ] Recursion
-- [ ] Dynamic Programming
+- [x] Dynamic Programming
 - [ ] BFS
 - [ ] DFS
 - [ ] Backtracking

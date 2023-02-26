@@ -51,7 +51,12 @@
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## Dynamic Programming
-- Update later..
+- 하위 문제의 결과를 메모이제이션 해두고, 나중에 필요할 때 참조해서 쓰는 것
+- 접근 순서
+    - 점화식으로 나타낼 수 있는 상태가 있는지 확인
+    - 해당 상태를 index로 하는 메모이제이션 배열 선언
+    - 점화식을 풀기 위한 초기값 할당
+    - loop를 통해 값 도출
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
