@@ -4,17 +4,17 @@
  */
 // 1. 문제 이해
 // 1-1. 입력
-//     - n: number, 1 <= n <= 45
+//      - n: number, 1 <= n <= 45
 // 1-2. 출력
-//     - countOfClimbingWay: number
+//      - countOfClimbingWay: number
 // 1-3. 제약
-//     - 한 번에 1칸 또는 2칸을 올라갈 수 있음
+//      - 한 번에 1칸 또는 2칸을 올라갈 수 있음
 // 2. 구현 방식
-//     - 어떤 상태를 점화식으로 세울 것인가? -> n
-//         - memo[n] = memo[n - 1] + memo[n - 2]
-//     - 초기값 할당
-//         - memo[1] = 1
-//         - memo[2] = 2
+//      - 어떤 상태를 점화식으로 세울 것인가? -> n
+//        - memo[n] = memo[n - 1] + memo[n - 2];
+//      - 초기값 할당
+//        - memo[1] = 1;
+//        - memo[2] = 2;
 const climbStairs = function (n) {
   let countOfClimbingWay = 1;
   const memo = Array.from({ length: n + 1 }, (_, idx) => {
