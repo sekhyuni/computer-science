@@ -16,11 +16,11 @@
 //      - listOfStartAndIndex[i][0](ithStart)를 오름차순 정렬
 //      - 범위 [1, intervals.length - 1]에서 binary search를 통해 최소값 추출
 const findRightInterval = function (intervals) {
-  const listOfRightIntervalIndices = [];
-
   if (intervals.length === 1) {
     return [-1];
   }
+
+  const listOfRightIntervalIndices = [];
 
   const listOfStartAndIndex = [];
   // Time Complexity: O(n), n === 2*10^4
