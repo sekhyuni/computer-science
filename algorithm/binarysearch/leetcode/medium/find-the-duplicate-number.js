@@ -43,16 +43,16 @@ const findDuplicate = function (nums) {
     }
   }
 
-  // Time Complexity: O(nlogn)
-  // Space Complexity: O(k)
+  // Total Time Complexity: O(nlogn)
+  // Total Space Complexity: O(1)
   return start;
 };
 
 const findDuplicateUseHashTable = function (nums) {
   const hashTableOfNums = new Map();
 
-  // Time Complexity: O(n)
-  // Space Complexity: O(n)
+  // Total Time Complexity: O(n)
+  // Total Space Complexity: O(n)
   for (let i = 0; i < nums.length; i++) {
     if (hashTableOfNums.has(nums[i])) {
       return nums[i];
