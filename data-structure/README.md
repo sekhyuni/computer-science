@@ -44,7 +44,7 @@
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
-    |Stack|O(n)|O(n)|O(1)|O(1)|
+    |Stack|O(1)|O(n)|O(1)|O(1)|
     ```javascript
         const stack = [];
         console.time('[Stack] Insertion Time Complexity is O(1)');
@@ -71,7 +71,7 @@
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
-    |Stack|O(n)|O(n)|O(1)|O(1)|
+    |Queue|O(1)|O(n)|O(1)|O(1)|
     ```javascript
         const queue = [];
         console.time('[Queue] Insertion Time Complexity is O(1)');
