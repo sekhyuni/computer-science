@@ -40,7 +40,46 @@
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Stack
-- [선형 구조] Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+- [선형 구조] 후입선출되는 방식의 자료구조이며, Array 또는 Linked List를 통해서 구현 가능
+- 구현 (Array 기반)
+    ```javascript
+    // 무엇을 구현할 것인가? push(item), pop(), peek(), isEmpty(), printStack()
+    class Stack {
+        constructor() {
+            this.items = [];
+        }
+
+        push(element) {
+            this.items.push(element);
+        }
+
+        pop() {
+            if (this.items.length === 0) {
+                return 'underflow';
+            }
+            return this.items.pop();
+        }
+
+        peek() {
+            if (this.items.length === 0) {
+                return 'No Elements in Stack';
+            }
+            return this.items[this.items.length - 1];
+        }
+
+        isEmpty() {
+            return this.items.length === 0;
+        }
+
+        printStack() {
+            let str = '';
+            for (let i = 0; i < this.items.length; i++) {
+                str += this.items[i] + ' ';
+            }
+            return str;
+        }
+    }
+    ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
@@ -67,7 +106,46 @@
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Queue
-- [선형 구조] A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
+- [선형 구조] 선입선출되는 방식의 자료구조이며, Array 또는 Linked List를 통해서 구현 가능
+- 구현 (Array 기반)
+    ```javascript
+    // 무엇을 구현할 것인가? enqueue(item), dequeue(), peek(), isEmpty(), printQueue()
+    class Queue {
+        constructor() {
+            this.items = [];
+        }
+
+        enqueue(element) {
+            this.items.push(element);
+        }
+
+        dequeue() {
+            if (this.items.length === 0) {
+                return 'underflow';
+            }
+            return this.items.shift();
+        }
+
+        peek() {
+            if (this.items.length === 0) {
+                return 'No Elements in Queue';
+            }
+            return this.items[0];
+        }
+
+        isEmpty() {
+            return this.items.length === 0;
+        }
+
+        printQueue() {
+            let str = '';
+            for (let i = 0; i < this.items.length; i++) {
+                str += this.items[i] + ' ';
+            }
+            return str;
+        }
+    }
+    ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
@@ -100,13 +178,57 @@
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Hash Table
-- [비선형 구조] 해시 테이블은 데이터가 Key-Value 쌍으로 저장된 구조
-- 특징
-    1. Key는 산술 연산을 수행하는 해시 함수의 인자
-    1. 해시 함수에서 반환된 해시 값은 해시 테이블에서 Key-Value 쌍의 index
-    1. 데이터의 크기에 관계없이 삽입 및 검색이 매우 빠른 자료구조
-    1. HashTable vs HashMap
-        - HashTable은 Thread-Safe하고, HashMap은 그렇지 않음. 따라서, Multi-Thread 환경이 아니라면, HashTable은 HashMap보다 성능이 떨어진다는 단점이 있음
+- [비선형 구조] key/value 쌍으로 데이터가 저장되는 자료구조이며, key를 입력받는 Hash 함수를 통해 index 값을 얻어와서 bucket에 저장함
+- 해시 충돌
+    1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
+- 해시 충돌 해결 방법
+    1. 분리 연결 방식
+        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Linked List 형식으로 저장하는 방식
+        - 단점: Linked List 크기가 커지면 시간 복잡도가 그만큼 증가
+    1. 개방 주소 방식
+        - 데이터를 삽입하려는 bucket이 이미 사용중인 경우 다른 bucket을 정해서 그 bucket에 데이터를 저장하는 방식
+        - 선형 탐색, 제곱 탐색, 이중 해시와 같은 방법으로 해결
+        - 단점: 2차 충돌 발생 가능성 존재
+- HashTable vs HashMap
+    - HashTable은 Thread-Safe하고, HashMap은 그렇지 않음. 따라서, Multi-Thread 환경이 아니라면, HashTable은 HashMap보다 성능이 떨어진다는 단점이 있음
+- 구현
+    ```javascript
+    // 무엇을 구현할 것인가? hash(key), setItem(key, value), getItem(key)
+    class HashTable {
+        constructor(size = 50) {
+            this.buckets = new Array(size);
+            this.size = size;
+        }
+
+        hash(key) {
+            return key.toString().length % this.size;
+        }
+
+        setItem(key, value) {
+            const index = this.hash(key);
+
+            if (!this.buckets[index]) {
+                this.buckets[index] = [];
+            }
+
+            this.buckets[index].push([key, value]);
+
+            return index;
+        }
+
+        getItem(key) {
+            const index = this.hash(key);
+
+            if (!this.buckets[index]) return null;
+
+            for (const bucket of this.buckets[index]) {
+                if (bucket[0] === key) {
+                    return bucket[1];
+                }
+            }
+        }
+    }
+    ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
