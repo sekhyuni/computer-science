@@ -48,6 +48,24 @@
     - stable, in-place 정렬로는 Bubble Sort (Time Complexity: O(n^2), Space Complexity: O(1))가 있음
     - not stable, in-place 정렬로는 Selection Sort (Time Complexity: O(n^2), Space Complexity: O(1))가 있음
     - stable, not in-place 정렬로는 Merge Sort (Time Complexity: O(nlogn), Space Complexity: O(n))가 있음
+- 종류
+    1. Bubble Sort
+        - 서로 인접한 두 요소를 비교해서 정렬하는 방식
+        - 구현
+            ```javascript
+            const unsortedList = [4, 3, 2, 5, 1];
+
+            for (let i = 0; i < unsortedList.length - 1; i++) {
+                for (let j = 0; j < unsortedList.length - i + 1; j++) {
+                    if (unsortedList[j] > unsortedList[j + 1]) {
+                        const temp = unsortedList[j + 1];
+                        unsortedList[j + 1] = unsortedList[j];
+                        unsortedList[j] = temp;
+                    }
+                }
+            }
+            ```
+
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
