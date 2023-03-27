@@ -9,7 +9,7 @@
 - [x] Hash Table
 - [ ] Graph
 - [ ] Tree
-- [ ] Heap
+- [x] Heap
 
 ## [Algorithm](https://github.com/sekhyuni/computer-science/blob/main/algorithm/README.md)
 - [x] Binary Search
