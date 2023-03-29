@@ -20,7 +20,7 @@
 //      2) min heap
 //        - matrix 배열의 범위 [(0, 0), (matrix.length - 1, matrix.length - 1)]에서 2중 loop로 순회
 //        - matrix[i][j]를 minHeap에 추가
-//        - k-1번 minHeap.remove();
+//        - k - 1번 minHeap.remove();
 //        - return minHeap.peek();
 const kthSmallest = function (matrix, k) {
   let start = matrix[0][0];
@@ -171,7 +171,7 @@ const kthSmallestUseHeap = function (matrix, k) {
     minHeap.remove();
   }
 
-  // Total Time Complexity: O(n^2 * logn^2), n === 300 + O(n^2 * logn^2), n === 300, O(n^2 * logn^2)은 대략 144만
+  // Total Time Complexity: O(n^2 * logn^2), n === 300 + O(n^2 * logn^2), n === 300, 2 * O(n^2 * logn^2)은 대략 288만
   // Total Space Complexity: O(n^2)
   return minHeap.peek();
 };
@@ -187,31 +187,33 @@ console.log(
   )
 );
 console.log(kthSmallest([[-5]], 1));
-console.time("n size is worst, binary search");
+
+console.time("size of n is the biggest, binary search");
 console.log(
   kthSmallest(
     [
       [-1000000000, -99999, 1],
-      [2, 3, 4],
-      [5, 6, 100000000],
+      [2, 500000000, 500000001],
+      [600000000, 750000000, 1000000000],
     ],
-    3
+    8
   )
 );
-console.timeEnd("n size is worst, binary search");
-console.time("n size is worst, min heap");
+console.timeEnd("size of n is the biggest, binary search");
+console.time("size of n is the biggest, min heap");
 console.log(
   kthSmallestUseHeap(
     [
       [-1000000000, -99999, 1],
-      [2, 3, 4],
-      [5, 6, 100000000],
+      [2, 500000000, 500000001],
+      [600000000, 750000000, 1000000000],
     ],
-    3
+    8
   )
 );
-console.timeEnd("n size is worst, min heap");
-console.time("n size is normal, binary search");
+console.timeEnd("size of n is the biggest, min heap");
+
+console.time("size of n is the smallest, binary search");
 console.log(
   kthSmallest(
     [
@@ -222,8 +224,8 @@ console.log(
     3
   )
 );
-console.timeEnd("n size is normal, binary search");
-console.time("n size is normal, min heap");
+console.timeEnd("size of n is the smallest, binary search");
+console.time("size of n is the smallest, min heap");
 console.log(
   kthSmallestUseHeap(
     [
@@ -234,4 +236,18 @@ console.log(
     3
   )
 );
-console.timeEnd("n size is normal, min heap");
+console.timeEnd("size of n is the smallest, min heap");
+
+const matrix = Array.from({ length: 300 }, (_, rowIdx) => {
+  const listOfRowItem = [];
+  for (let i = 0; i < 300; i++) {
+    listOfRowItem.push(i + rowIdx);
+  }
+  return listOfRowItem;
+});
+console.time("size of m is the biggest, binary search");
+console.log(kthSmallest(matrix, 800));
+console.timeEnd("size of m is the biggest, binary search");
+console.time("size of m is the biggest, min heap");
+console.log(kthSmallestUseHeap(matrix, 800));
+console.timeEnd("size of m is the biggest, min heap");
