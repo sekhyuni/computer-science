@@ -188,7 +188,7 @@ console.log(
 );
 console.log(kthSmallest([[-5]], 1));
 
-console.time("size of n is the biggest, binary search");
+console.time('size of n is the biggest, binary search');
 console.log(
   kthSmallest(
     [
@@ -199,8 +199,8 @@ console.log(
     8
   )
 );
-console.timeEnd("size of n is the biggest, binary search");
-console.time("size of n is the biggest, min heap");
+console.timeEnd('size of n is the biggest, binary search');
+console.time('size of n is the biggest, min heap');
 console.log(
   kthSmallestUseHeap(
     [
@@ -211,9 +211,9 @@ console.log(
     8
   )
 );
-console.timeEnd("size of n is the biggest, min heap");
+console.timeEnd('size of n is the biggest, min heap');
 
-console.time("size of n is the smallest, binary search");
+console.time('size of n is the smallest, binary search');
 console.log(
   kthSmallest(
     [
@@ -224,8 +224,8 @@ console.log(
     3
   )
 );
-console.timeEnd("size of n is the smallest, binary search");
-console.time("size of n is the smallest, min heap");
+console.timeEnd('size of n is the smallest, binary search');
+console.time('size of n is the smallest, min heap');
 console.log(
   kthSmallestUseHeap(
     [
@@ -236,7 +236,7 @@ console.log(
     3
   )
 );
-console.timeEnd("size of n is the smallest, min heap");
+console.timeEnd('size of n is the smallest, min heap');
 
 const matrix = Array.from({ length: 300 }, (_, rowIdx) => {
   const listOfRowItem = [];
@@ -245,9 +245,9 @@ const matrix = Array.from({ length: 300 }, (_, rowIdx) => {
   }
   return listOfRowItem;
 });
-console.time("size of m is the biggest, binary search");
+console.time('size of m is the biggest, binary search');
 console.log(kthSmallest(matrix, 800));
-console.timeEnd("size of m is the biggest, binary search");
-console.time("size of m is the biggest, min heap");
+console.timeEnd('size of m is the biggest, binary search');
+console.time('size of m is the biggest, min heap');
 console.log(kthSmallestUseHeap(matrix, 800));
-console.timeEnd("size of m is the biggest, min heap");
+console.timeEnd('size of m is the biggest, min heap');

@@ -8,36 +8,36 @@
 //      - digits로 이루어진 정수 + 1의 값을 result에 담아서 반환
 // 2. 구현 방식
 // 2.1 digits 마지막부터 순회하면서 전 단계에서 +1이 안 된 경우 digits[i]를 result[i]에 저장
-// 2.3 digits 마지막부터 순회하면서 전 단계에서 +1이 되고, digits[i]가 9가 아닌 경우, digits[i] + 1을 result[i]에 저장  
+// 2.3 digits 마지막부터 순회하면서 전 단계에서 +1이 되고, digits[i]가 9가 아닌 경우, digits[i] + 1을 result[i]에 저장
 // 2.3 digits 마지막부터 순회하면서 전 단계에서 +1이 되고, digits[i]가 9인 경우, result[i]에 0을 저장
 const plusOne = function (digits) {
-    const result = [];
-    let isPrevOverNine = true;
+  const result = [];
+  let isPrevOverNine = true;
 
-    // 시간 복잡도: O(n)
-    for (let i = digits.length - 1; i >= 0; i--) {
-        if (isPrevOverNine) {
-            result[i] = digits[i] + 1;
+  // 시간 복잡도: O(n)
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (isPrevOverNine) {
+      result[i] = digits[i] + 1;
 
-            if (result[i] === 10) {
-                result[i] = 0;
+      if (result[i] === 10) {
+        result[i] = 0;
 
-                if (i === 0) {
-                    result.unshift(1);
-                }
-            } else {
-                isPrevOverNine = false;
-            }
-        } else {
-            result[i] = digits[i];
+        if (i === 0) {
+          result.unshift(1);
         }
+      } else {
+        isPrevOverNine = false;
+      }
+    } else {
+      result[i] = digits[i];
     }
+  }
 
-    return result;
+  return result;
 };
 
 // const plusOne = function (digits) {
-//     // first join the digits with no space and add 1  
+//     // first join the digits with no space and add 1
 //     let str = digits.join('');
 //     let num = BigInt(str) + BigInt(1);
 //     // convert the num into array

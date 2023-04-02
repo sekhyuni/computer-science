@@ -38,7 +38,7 @@ function solution(enroll, referral, seller, amount) {
     );
 
     let recommender = hashTableOfRecommendation.get(seller[i]);
-    while (recommender !== "-") {
+    while (recommender !== '-') {
       const restOfRest = Math.floor(rest * 0.1);
 
       hashTableOfBenefitOfAllEnroll.set(
@@ -67,18 +67,18 @@ function solution(enroll, referral, seller, amount) {
 
 console.log(
   solution(
-    ["john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"],
-    ["-", "-", "mary", "edward", "mary", "mary", "jaimie", "edward"],
-    ["young", "john", "tod", "emily", "mary"],
+    ['john', 'mary', 'edward', 'sam', 'emily', 'jaimie', 'tod', 'young'],
+    ['-', '-', 'mary', 'edward', 'mary', 'mary', 'jaimie', 'edward'],
+    ['young', 'john', 'tod', 'emily', 'mary'],
     [12, 4, 2, 5, 10]
   )
 );
 console.log(
   solution(
-    ["john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"],
-    ["-", "-", "mary", "edward", "mary", "mary", "jaimie", "edward"],
-    ["sam", "emily", "jaimie", "edward"],
+    ['john', 'mary', 'edward', 'sam', 'emily', 'jaimie', 'tod', 'young'],
+    ['-', '-', 'mary', 'edward', 'mary', 'mary', 'jaimie', 'edward'],
+    ['sam', 'emily', 'jaimie', 'edward'],
     [2, 3, 5, 4]
   )
 );
-console.log(solution(["john", "mary"], ["-", "-"], ["john", "mary"], [2, 3]));
+console.log(solution(['john', 'mary'], ['-', '-'], ['john', 'mary'], [2, 3]));

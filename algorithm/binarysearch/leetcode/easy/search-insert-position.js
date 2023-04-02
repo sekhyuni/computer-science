@@ -15,37 +15,37 @@
 //      - -10,000 <= target <= 10,000
 // 1-4. 제약 사항
 //      - 주어진 nums 배열에서 target값을 가지는 index를 찾아서 반환
-//      - 주어진 nums 배열에서 target값을 찾지 못하면 target이 들어가야 할 index를 찾아서 반환 
+//      - 주어진 nums 배열에서 target값을 찾지 못하면 target이 들어가야 할 index를 찾아서 반환
 // 2. 구현 방법
 // 2-1. binary search를 사용해서 target값을 가지는 index를 찾아서 반환
 // 2-2. binary search를 사용해서 target값을 찾지 못하면 target이 들어가야 할 index를 찾아서 반환
 const searchInsert = function (nums, target) {
-    const index = binarySearch(nums, target);
+  const index = binarySearch(nums, target);
 
-    // Total Time Complexity: O(logn)
-    return index;
+  // Total Time Complexity: O(logn)
+  return index;
 };
 
 const binarySearch = (arr, target) => {
-    let start = 0;
-    let end = arr.length - 1;
+  let start = 0;
+  let end = arr.length - 1;
 
-    // 2-1. binary search를 사용해서 target값을 가지는 index를 찾아서 반환
-    // Time Complexity: O(logn)
-    while (start <= end) {
-        const mid = Math.floor((start + end) / 2);
+  // 2-1. binary search를 사용해서 target값을 가지는 index를 찾아서 반환
+  // Time Complexity: O(logn)
+  while (start <= end) {
+    const mid = Math.floor((start + end) / 2);
 
-        if (arr[mid] === target) {
-            return mid;
-        } else if (arr[mid] > target) {
-            end = mid - 1;
-        } else {
-            start = mid + 1;
-        }
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] > target) {
+      end = mid - 1;
+    } else {
+      start = mid + 1;
     }
+  }
 
-    // 2-2. binary search를 사용해서 target값을 찾지 못하면 target이 들어가야 할 index를 찾아서 반환
-    return start;
+  // 2-2. binary search를 사용해서 target값을 찾지 못하면 target이 들어가야 할 index를 찾아서 반환
+  return start;
 };
 
 console.log(searchInsert([1, 3, 5, 6], 5));

@@ -1,17 +1,17 @@
 function solution(s) {
-    const stack = [];
-    const lengthOfS = s.length;
+  const stack = [];
+  const lengthOfS = s.length;
 
-    stack.push(s[0]);
-    for (let i = 1; i < lengthOfS; i++) {
-        if (stack[stack.length - 1] === '(' && s[i] === ')') {
-            stack.pop();
-        } else {
-            stack.push(s[i]);
-        }
+  stack.push(s[0]);
+  for (let i = 1; i < lengthOfS; i++) {
+    if (stack[stack.length - 1] === '(' && s[i] === ')') {
+      stack.pop();
+    } else {
+      stack.push(s[i]);
     }
+  }
 
-    return !stack.length;
+  return !stack.length;
 }
 
-console.log(solution('(())()'))
+console.log(solution('(())()'));

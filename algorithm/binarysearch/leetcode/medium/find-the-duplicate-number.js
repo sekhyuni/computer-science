@@ -13,13 +13,13 @@
 //      - 상수 공간만 사용해야 함
 // 2. 구현 방식
 //      1) binary search
-//          - [1, n - 1] 범위만큼 binary search로 탐색
-//          - nums 길이만큼 loop 돌리면서, nums[i]가 mid보다 작으면 count++;
-//          - count > mid ? end = mid - 1 : start = mid + 1;
-//          - start를 반환
+//        - [1, n - 1] 범위만큼 binary search로 탐색
+//        - nums 길이만큼 loop 돌리면서, nums[i]가 mid보다 작으면 count++;
+//        - count > mid ? end = mid - 1 : start = mid + 1;
+//        - start를 반환
 //      2) hash table
-//          - nums[i]를 key, 나타난 횟수를 value로 하는 hash table 생성
-//          - nums 길이만큼 loop 돌리면서, 2번 나타난 nums[i]를 반환
+//        - nums[i]를 key, 나타난 횟수를 value로 하는 hash table 생성
+//        - nums 길이만큼 loop 돌리면서, 2번 나타난 nums[i]를 반환
 const findDuplicate = function (nums) {
   let start = 1;
   let end = nums.length - 1;

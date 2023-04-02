@@ -18,7 +18,7 @@ function solution(N, number) {
   const memo = Array.from({ length: 9 }, () => new Set());
 
   for (let i = 1; i < 9; i++) {
-    memo[i].add("1".repeat(i) * N);
+    memo[i].add('1'.repeat(i) * N);
 
     for (let j = 1; j < i; j++) {
       for (const operand1 of memo[j]) {

@@ -139,11 +139,11 @@ const findRelativeRanks = function (score) {
   // Time Complexity: O(n), n === 10^4
   for (let i = 0; i < score.length; i++) {
     if (hashTableOfScoreAndRank.get(score[i]) === 1) {
-      listOfRank.push("Gold Medal");
+      listOfRank.push('Gold Medal');
     } else if (hashTableOfScoreAndRank.get(score[i]) === 2) {
-      listOfRank.push("Silver Medal");
+      listOfRank.push('Silver Medal');
     } else if (hashTableOfScoreAndRank.get(score[i]) === 3) {
-      listOfRank.push("Bronze Medal");
+      listOfRank.push('Bronze Medal');
     } else {
       listOfRank.push(String(hashTableOfScoreAndRank.get(score[i])));
     }

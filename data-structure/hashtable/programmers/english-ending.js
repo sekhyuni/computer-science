@@ -46,36 +46,36 @@ function solution(n, words) {
 
 console.log(
   solution(3, [
-    "tank",
-    "kick",
-    "know",
-    "wheel",
-    "land",
-    "dream",
-    "mother",
-    "robot",
-    "tank",
+    'tank',
+    'kick',
+    'know',
+    'wheel',
+    'land',
+    'dream',
+    'mother',
+    'robot',
+    'tank',
   ])
 );
 console.log(
   solution(5, [
-    "hello",
-    "observe",
-    "effect",
-    "take",
-    "either",
-    "recognize",
-    "encourage",
-    "ensure",
-    "establish",
-    "hang",
-    "gather",
-    "refer",
-    "reference",
-    "estimate",
-    "executive",
+    'hello',
+    'observe',
+    'effect',
+    'take',
+    'either',
+    'recognize',
+    'encourage',
+    'ensure',
+    'establish',
+    'hang',
+    'gather',
+    'refer',
+    'reference',
+    'estimate',
+    'executive',
   ])
 );
 console.log(
-  solution(2, ["hello", "one", "even", "never", "now", "world", "draw"])
+  solution(2, ['hello', 'one', 'even', 'never', 'now', 'world', 'draw'])
 );
