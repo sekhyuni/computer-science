@@ -4,8 +4,8 @@
 //  - a[i] > leftMinMemo[i] && a[i] > rightMinMemo[a.length - i - 1]이면, 제외한다.
 //  - a[0]와 a[a.length - 1]은 무조건 남을 수 있음
 // 2. brute force
-//  - 좌측끝부터 target - 1까지 최소값을 찾는다.
-//  - 우측끝부터 target + 1까지 최소값을 찾는다.
+//  - 좌측끝부터 i - 1까지 최소값을 찾는다.
+//  - 우측끝부터 i + 1까지 최소값을 찾는다.
 //  - a[i]과 leftMin 비교, a[i]과 rightMin을 비교한다.
 //  - a[i] > leftMin && a[i] > rightMin이면, 제외한다.
 //  - a[0]와 a[a.length - 1]은 무조건 남을 수 있음
