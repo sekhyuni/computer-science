@@ -6,7 +6,7 @@
 //  - 3중 loop를 돌면서 각 변의 길이 a, b, c 값이 a + b > c, b + c > a, c + a > b를 만족하는지 확인
 // 2. binary search
 //  - nums를 오름차순 정렬
-//  - 2중 loop를 돌면서 각 변의 길이 a, b 값을 고르고, a, b, c 값이 a + b > c를 만족하는 c를 binary search로 탐색 (nums를 오름차순 정렬했으므로 나머지 조건은 이미 만족한 상태)
+//  - 2중 loop를 돌면서 각 변의 길이 a, b 값을 고르고, a, b, c 값이 a + b > c를 만족하는 나머지 변의 길이 c를 binary search로 탐색 (nums를 오름차순 정렬했으므로 나머지 조건들은 이미 만족한 상태)
 const triangleNumber = function (nums) {
   let countOfCanTriangle = 0;
 
