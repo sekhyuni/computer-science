@@ -41,132 +41,134 @@
 [맨 위로 가기](#data-structure)
 ## Stack
 - [선형 구조] 후입선출되는 방식의 자료구조이며, Array 또는 Linked List를 통해서 구현 가능
-- 구현 (Array 기반)
-    ```javascript
-    // 무엇을 구현할 것인가? push(item), pop(), peek(), isEmpty(), printStack()
-    class Stack {
-        constructor() {
-            this.items = [];
-        }
-
-        push(element) {
-            this.items.push(element);
-        }
-
-        pop() {
-            if (this.items.length === 0) {
-                return 'underflow';
+- 구현 방식
+    - Array
+        ```javascript
+        // 무엇을 구현할 것인가? push(item), pop(), peek(), isEmpty(), printStack()
+        class Stack {
+            constructor() {
+                this.items = [];
             }
-            return this.items.pop();
-        }
 
-        peek() {
-            if (this.items.length === 0) {
-                return 'No Elements in Stack';
+            push(element) {
+                this.items.push(element);
             }
-            return this.items[this.items.length - 1];
-        }
 
-        isEmpty() {
-            return this.items.length === 0;
-        }
-
-        printStack() {
-            let str = '';
-            for (let i = 0; i < this.items.length; i++) {
-                str += this.items[i] + ' ';
+            pop() {
+                if (this.items.length === 0) {
+                    return 'underflow';
+                }
+                return this.items.pop();
             }
-            return str;
+
+            peek() {
+                if (this.items.length === 0) {
+                    return 'No Elements in Stack';
+                }
+                return this.items[this.items.length - 1];
+            }
+
+            isEmpty() {
+                return this.items.length === 0;
+            }
+
+            printStack() {
+                let str = '';
+                for (let i = 0; i < this.items.length; i++) {
+                    str += this.items[i] + ' ';
+                }
+                return str;
+            }
         }
-    }
-    ```
+        ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
     |Stack|O(1)|O(n)|O(1)|O(1)|
     ```javascript
-        const stack = [];
-        console.time('[Stack] Insertion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            stack.push(i);
-        }
-        console.timeEnd('[Stack] Insertion Time Complexity is O(1)');
-        console.time('[Stack] Search Time Complexity is O(n)');
-        for (let i = 0; i < 50000; i++) {
-            if (stack.includes(i)) { }
-        }
-        console.timeEnd('[Stack] Search Time Complexity is O(n)');
-        console.time('[Stack] Deletion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            stack.pop();
-        }
-        console.timeEnd('[Stack] Deletion Time Complexity is O(1)');
+    const stack = [];
+    console.time('[Stack] Insertion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        stack.push(i);
+    }
+    console.timeEnd('[Stack] Insertion Time Complexity is O(1)');
+    console.time('[Stack] Search Time Complexity is O(n)');
+    for (let i = 0; i < 50000; i++) {
+        if (stack.includes(i)) { }
+    }
+    console.timeEnd('[Stack] Search Time Complexity is O(n)');
+    console.time('[Stack] Deletion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        stack.pop();
+    }
+    console.timeEnd('[Stack] Deletion Time Complexity is O(1)');
     ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Queue
 - [선형 구조] 선입선출되는 방식의 자료구조이며, Array 또는 Linked List를 통해서 구현 가능
-- 구현 (Array 기반)
-    ```javascript
-    // 무엇을 구현할 것인가? enqueue(item), dequeue(), peek(), isEmpty(), printQueue()
-    class Queue {
-        constructor() {
-            this.items = [];
-        }
-
-        enqueue(element) {
-            this.items.push(element);
-        }
-
-        dequeue() {
-            if (this.items.length === 0) {
-                return 'underflow';
+- 구현 방식
+    - Array
+        ```javascript
+        // 무엇을 구현할 것인가? enqueue(item), dequeue(), peek(), isEmpty(), printQueue()
+        class Queue {
+            constructor() {
+                this.items = [];
             }
-            return this.items.shift();
-        }
 
-        peek() {
-            if (this.items.length === 0) {
-                return 'No Elements in Queue';
+            enqueue(element) {
+                this.items.push(element);
             }
-            return this.items[0];
-        }
 
-        isEmpty() {
-            return this.items.length === 0;
-        }
-
-        printQueue() {
-            let str = '';
-            for (let i = 0; i < this.items.length; i++) {
-                str += this.items[i] + ' ';
+            dequeue() {
+                if (this.items.length === 0) {
+                    return 'underflow';
+                }
+                return this.items.shift();
             }
-            return str;
+
+            peek() {
+                if (this.items.length === 0) {
+                    return 'No Elements in Queue';
+                }
+                return this.items[0];
+            }
+
+            isEmpty() {
+                return this.items.length === 0;
+            }
+
+            printQueue() {
+                let str = '';
+                for (let i = 0; i < this.items.length; i++) {
+                    str += this.items[i] + ' ';
+                }
+                return str;
+            }
         }
-    }
-    ```
+        ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
     |Queue|O(1)|O(n)|O(1)|O(1)|
     ```javascript
-        const queue = [];
-        console.time('[Queue] Insertion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            queue.push(i); // equal enqueue
-        }
-        console.timeEnd('[Queue] Insertion Time Complexity is O(1)');
-        console.time('[Queue] Search Time Complexity is O(n)');
-        for (let i = 0; i < 50000; i++) {
-            if (queue.includes(i)) { }
-        }
-        console.timeEnd('[Queue] Search Time Complexity is O(n)');
-        console.time('[Queue] Deletion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            queue.shift(); // Actually, Time Complexity of shift is not O(1), but O(n). However, Time Complexity: dequeue < shift < splice. So, sometimes using shift is no problem
-        }
-        console.timeEnd('[Queue] Deletion Time Complexity is O(1)');
+    const queue = [];
+    console.time('[Queue] Insertion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        queue.push(i); // equal enqueue
+    }
+    console.timeEnd('[Queue] Insertion Time Complexity is O(1)');
+    console.time('[Queue] Search Time Complexity is O(n)');
+    for (let i = 0; i < 50000; i++) {
+        if (queue.includes(i)) { }
+    }
+    console.timeEnd('[Queue] Search Time Complexity is O(n)');
+    console.time('[Queue] Deletion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        queue.shift(); // Actually, Time Complexity of shift is not O(1), but O(n). However, Time Complexity: dequeue < shift < splice. So, sometimes using shift is no problem
+    }
+    console.timeEnd('[Queue] Deletion Time Complexity is O(1)');
     ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
@@ -234,46 +236,68 @@
     |:---:|:---:|:---:|:---:|:---:|
     |Hash Table|N/A|O(1)|O(1)|O(1)|
     ```javascript
-        const hashTableByObject = {};
-        console.time('[Hash Table By Object] Insertion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            hashTableByObject[i] = i;
-        }
-        console.timeEnd('[Hash Table By Object] Insertion Time Complexity is O(1)');
-        console.time('[Hash Table By Object] Search Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            if (hashTableByObject.hasOwnProperty(i)) { }
-        }
-        console.timeEnd('[Hash Table By Object] Search Time Complexity is O(1)');
-        console.time('[Hash Table By Object] Deletion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            delete hashTableByObject[i];
-        }
-        console.timeEnd('[Hash Table By Object] Deletion Time Complexity is O(1)');
+    const hashTableByObject = {};
+    console.time('[Hash Table By Object] Insertion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        hashTableByObject[i] = i;
+    }
+    console.timeEnd('[Hash Table By Object] Insertion Time Complexity is O(1)');
+    console.time('[Hash Table By Object] Search Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        if (hashTableByObject.hasOwnProperty(i)) { }
+    }
+    console.timeEnd('[Hash Table By Object] Search Time Complexity is O(1)');
+    console.time('[Hash Table By Object] Deletion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        delete hashTableByObject[i];
+    }
+    console.timeEnd('[Hash Table By Object] Deletion Time Complexity is O(1)');
 
-        const hashTableByMap = new Map();
-        console.time('[Hash Table By Map] Insertion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            hashTableByMap.set(i, i);
-        }
-        console.timeEnd('[Hash Table By Map] Insertion Time Complexity is O(1)');
-        console.time('[Hash Table By Map] Search Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            if (hashTableByMap.has(i)) { }
-        }
-        console.timeEnd('[Hash Table By Map] Search Time Complexity is O(1)');
-        console.time('[Hash Table By Map] Deletion Time Complexity is O(1)');
-        for (let i = 0; i < 50000; i++) {
-            hashTableByMap.delete(i);
-        }
-        console.timeEnd('[Hash Table By Map] Deletion Time Complexity is O(1)');
+    const hashTableByMap = new Map();
+    console.time('[Hash Table By Map] Insertion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        hashTableByMap.set(i, i);
+    }
+    console.timeEnd('[Hash Table By Map] Insertion Time Complexity is O(1)');
+    console.time('[Hash Table By Map] Search Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        if (hashTableByMap.has(i)) { }
+    }
+    console.timeEnd('[Hash Table By Map] Search Time Complexity is O(1)');
+    console.time('[Hash Table By Map] Deletion Time Complexity is O(1)');
+    for (let i = 0; i < 50000; i++) {
+        hashTableByMap.delete(i);
+    }
+    console.timeEnd('[Hash Table By Map] Deletion Time Complexity is O(1)');
     ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
 ## Graph
-- [비선형 구조]
-- Update later..
+- [비선형 구조] 정점(vertex or node)과 그 정점을 연결하는 간선(edge)을 하나로 모아놓은 자료구조
+- 구현 방식
+    1. 인접 행렬 (Adjacency Matrix)
+        ```javascript
+        const n = prompt();
+        const m = prompt();
+
+        const matrix = new Array(n + 1);
+        for (let i = 0; i < matrix.length; i++) {
+            matrix[i] = new Array(n + 1);
+        }
+
+        for (let i = 0; i < m; i++) {
+            const u = prompt();
+            const v = prompt();
+
+            matrix[u][v] = 1;
+            matrix[v][u] = 1;
+        }
+        ```
+        - 인접 행렬은 정점수 x 정점수 크기의 2차원 배열
+        - matrix라는 2차원 배열이 있을 때, matrix[i][j]의 값은 정점 i에서 정점 j까지의 간선이 존재하면 1이고, 존재하지 않으면 0임
+        - 무방향 그래프의 인접 행렬은 항상 대칭
+        - 가중치 그래프에서 matrix[i][j] === w이면, 가중치가 w인 정점 i에서 정점 j까지의 간선이 존재한다는 의미임         
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
@@ -285,144 +309,145 @@
 [맨 위로 가기](#data-structure)
 ## Heap
 - [비선형 구조] A Heap is a special Tree-based Data Structure in which the tree is a complete binary tree.
-- 구현 (Array 기반)
-    ```javascript
-    class MaxHeap {
-        constructor(maxSize) {
-            // the array in the heap.
-            this.arr = new Array(maxSize).fill(null);
-    
-            // Maximum possible size of
-            // the Max Heap.
-            this.maxSize = maxSize;
-    
-            // Number of elements in the
-            // Max heap currently.
-            this.heapSize = 0;
-        }
-    
-        // Heapifies a sub-tree taking the
-        // given index as the root.
-        MaxHeapify(i) {
-            const l = this.lChild(i);
-            const r = this.rChild(i);
-            let largest = i;
-            if (l < this.heapSize && this.arr[l] > this.arr[i]) {
-                largest = l;
+- 구현 방식 
+    - Array
+        ```javascript
+        class MaxHeap {
+            constructor(maxSize) {
+                // the array in the heap.
+                this.arr = new Array(maxSize).fill(null);
+        
+                // Maximum possible size of
+                // the Max Heap.
+                this.maxSize = maxSize;
+        
+                // Number of elements in the
+                // Max heap currently.
+                this.heapSize = 0;
             }
-            if (r < this.heapSize && this.arr[r] > this.arr[largest]) {
-                largest = r;
+        
+            // Heapifies a sub-tree taking the
+            // given index as the root.
+            MaxHeapify(i) {
+                const l = this.lChild(i);
+                const r = this.rChild(i);
+                let largest = i;
+                if (l < this.heapSize && this.arr[l] > this.arr[i]) {
+                    largest = l;
+                }
+                if (r < this.heapSize && this.arr[r] > this.arr[largest]) {
+                    largest = r;
+                }
+                if (largest !== i) {
+                    const temp = this.arr[i];
+                    this.arr[i] = this.arr[largest];
+                    this.arr[largest] = temp;
+                    this.MaxHeapify(largest);
+                }
             }
-            if (largest !== i) {
-                const temp = this.arr[i];
-                this.arr[i] = this.arr[largest];
-                this.arr[largest] = temp;
-                this.MaxHeapify(largest);
+        
+            // Returns the index of the parent
+            // of the element at ith index.
+            parent(i) {
+                return Math.floor((i - 1) / 2);
             }
-        }
-    
-        // Returns the index of the parent
-        // of the element at ith index.
-        parent(i) {
-            return Math.floor((i - 1) / 2);
-        }
-    
-        // Returns the index of the left child.
-        lChild(i) {
-            return 2 * i + 1;
-        }
-    
-        // Returns the index of the
-        // right child.
-        rChild(i) {
-            return 2 * i + 2;
-        }
-    
-        // Removes the root which in this
-        // case contains the maximum element.
-        removeMax() {
-            // Checking whether the heap array
-            // is empty or not.
-            if (this.heapSize <= 0) {
-                return null;
+        
+            // Returns the index of the left child.
+            lChild(i) {
+                return 2 * i + 1;
             }
-            if (this.heapSize === 1) {
+        
+            // Returns the index of the
+            // right child.
+            rChild(i) {
+                return 2 * i + 2;
+            }
+        
+            // Removes the root which in this
+            // case contains the maximum element.
+            removeMax() {
+                // Checking whether the heap array
+                // is empty or not.
+                if (this.heapSize <= 0) {
+                    return null;
+                }
+                if (this.heapSize === 1) {
+                    this.heapSize -= 1;
+                    return this.arr[0];
+                }
+        
+                // Storing the maximum element
+                // to remove it.
+                const root = this.arr[0];
+                this.arr[0] = this.arr[this.heapSize - 1];
                 this.heapSize -= 1;
+        
+                // To restore the property
+                // of the Max heap.
+                this.MaxHeapify(0);
+        
+                return root;
+            }
+        
+            // Increases value of key at
+            // index 'i' to new_val.
+            increaseKey(i, newVal) {
+                this.arr[i] = newVal;
+                while (i !== 0 && this.arr[this.parent(i)] < this.arr[i]) {
+                    const temp = this.arr[i];
+                    this.arr[i] = this.arr[this.parent(i)];
+                    this.arr[this.parent(i)] = temp;
+                    i = this.parent(i);
+                }
+            }
+        
+            // Returns the maximum key
+            // (key at root) from max heap.
+            getMax() {
                 return this.arr[0];
             }
-    
-            // Storing the maximum element
-            // to remove it.
-            const root = this.arr[0];
-            this.arr[0] = this.arr[this.heapSize - 1];
-            this.heapSize -= 1;
-    
-            // To restore the property
-            // of the Max heap.
-            this.MaxHeapify(0);
-    
-            return root;
-        }
-    
-        // Increases value of key at
-        // index 'i' to new_val.
-        increaseKey(i, newVal) {
-            this.arr[i] = newVal;
-            while (i !== 0 && this.arr[this.parent(i)] < this.arr[i]) {
-                const temp = this.arr[i];
-                this.arr[i] = this.arr[this.parent(i)];
-                this.arr[this.parent(i)] = temp;
-                i = this.parent(i);
+        
+            curSize() {
+                return this.heapSize;
+            }
+        
+            // Deletes a key at given index i.
+            deleteKey(i) {
+                // It increases the value of the key
+                // to infinity and then removes
+                // the maximum value.
+                this.increaseKey(i, Infinity);
+                this.removeMax();
+            }
+        
+            // Inserts a new key 'x' in the Max Heap.
+            insertKey(x) {
+                // To check whether the key
+                // can be inserted or not.
+                if (this.heapSize === this.maxSize) {
+                    console.log("\nOverflow: Could not insertKey\n");
+                    return;
+                }
+        
+                let i = this.heapSize;
+                this.arr[i] = x;
+        
+                // The new key is initially
+                // inserted at the end.
+                this.heapSize += 1;
+        
+                // The max heap property is checked
+                // and if violation occurs,
+                // it is restored.
+                while (i !== 0 && this.arr[this.parent(i)] < this.arr[i]) {
+                    const temp = this.arr[i];
+                    this.arr[i] = this.arr[this.parent(i)];
+                    this.arr[this.parent(i)] = temp;
+                    i = this.parent(i);
+                }
             }
         }
-    
-        // Returns the maximum key
-        // (key at root) from max heap.
-        getMax() {
-            return this.arr[0];
-        }
-    
-        curSize() {
-            return this.heapSize;
-        }
-    
-        // Deletes a key at given index i.
-        deleteKey(i) {
-            // It increases the value of the key
-            // to infinity and then removes
-            // the maximum value.
-            this.increaseKey(i, Infinity);
-            this.removeMax();
-        }
-    
-        // Inserts a new key 'x' in the Max Heap.
-        insertKey(x) {
-            // To check whether the key
-            // can be inserted or not.
-            if (this.heapSize === this.maxSize) {
-                console.log("\nOverflow: Could not insertKey\n");
-                return;
-            }
-    
-            let i = this.heapSize;
-            this.arr[i] = x;
-    
-            // The new key is initially
-            // inserted at the end.
-            this.heapSize += 1;
-    
-            // The max heap property is checked
-            // and if violation occurs,
-            // it is restored.
-            while (i !== 0 && this.arr[this.parent(i)] < this.arr[i]) {
-                const temp = this.arr[i];
-                this.arr[i] = this.arr[this.parent(i)];
-                this.arr[this.parent(i)] = temp;
-                i = this.parent(i);
-            }
-        }
-    }
-    ```
+        ```
 - 시간 복잡도
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
