@@ -19,22 +19,22 @@
     |:---:|:---:|:---:|:---:|:---:|
     |Array|O(1)|O(n)|O(n)|O(n)|
     ```javascript
-        const array = [];
-        console.time('[Array] Insertion Time Complexity is O(n)');
-        for (let i = 0; i < 50000; i++) {
-            array.splice(i, 0, i);
-        }
-        console.timeEnd('[Array] Insertion Time Complexity is O(n)');
-        console.time('[Array] Search Time Complexity is O(n)');
-        for (let i = 0; i < 50000; i++) {
-            if (array.includes(i)) { }
-        }
-        console.timeEnd('[Array] Search Time Complexity is O(n)');
-        console.time('[Array] Deletion Time Complexity is O(n)');
-        for (let i = 0; i < 50000; i++) {
-            array.splice(0, 1);
-        }
-        console.timeEnd('[Array] Deletion Time Complexity is O(n)');
+    const array = [];
+    console.time('[Array] Insertion Time Complexity is O(n)');
+    for (let i = 0; i < 50000; i++) {
+        array.splice(i, 0, i);
+    }
+    console.timeEnd('[Array] Insertion Time Complexity is O(n)');
+    console.time('[Array] Search Time Complexity is O(n)');
+    for (let i = 0; i < 50000; i++) {
+        if (array.includes(i)) { }
+    }
+    console.timeEnd('[Array] Search Time Complexity is O(n)');
+    console.time('[Array] Deletion Time Complexity is O(n)');
+    for (let i = 0; i < 50000; i++) {
+        array.splice(0, 1);
+    }
+    console.timeEnd('[Array] Deletion Time Complexity is O(n)');
     ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
