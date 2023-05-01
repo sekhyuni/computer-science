@@ -83,37 +83,131 @@
     1. loop를 통해 값 도출
 - 예시 코드
     ```javascript
-        const dynamicProgramming = (n) => {
-            let fibonacciNumber = 0;
-            const memo = Array.from({ length: n + 1 }, (_, idx) => {
-                if (idx === 0) {
+    const dynamicProgramming = (n) => {
+        let fibonacciNumber = 0;
+        const memo = Array.from({ length: n + 1 }, (_, idx) => {
+            if (idx === 0) {
                 return 0;
-                } else if (idx === 1) {
+            } else if (idx === 1) {
                 return 1;
-                } else {
+            } else {
                 return 0;
-                }
-            });
-
-            for (let i = 2; i <= n; i++) {
-                memo[i] = memo[i - 1] + memo[i - 2];
             }
+        });
 
-            fibonacciNumber = memo[n];
+        for (let i = 2; i <= n; i++) {
+            memo[i] = memo[i - 1] + memo[i - 2];
+        }
 
-            return fibonacciNumber;
-        };
+        fibonacciNumber = memo[n];
+
+        return fibonacciNumber;
+    };
     ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## BFS
-- Update later..
+- 시작 노드에서 가까운 노드부터 차례대로 탐색하는 방식
+- 예시 코드
+    ```javascript
+    class Graph {
+        constructor(numVertices) {
+            this.numVertices = numVertices;
+            this.matrix = Array.from({ length: numVertices }, () =>
+                new Array(numVertices).fill(0)
+            );
+        }
+
+        addEdge(start, end) {
+            this.matrix[start][end] = 1;
+            this.matrix[end][start] = 1;
+        }
+
+        BFS(start) {
+            const queue = [];
+            const visited = Array(this.numVertices).fill(false);
+
+            queue.push(start);
+            visited[start] = true;
+
+            while (queue.length > 0) {
+                const node = queue.shift();
+
+                console.log(node);
+
+                for (let i = 0; i < this.numVertices; i++) {
+                    if (this.matrix[node][i] === 1 && !visited[i]) {
+                        queue.push(i);
+                        visited[i] = true;
+                    }
+                }
+            }
+        }
+    }
+
+    const graph = new Graph(7);
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 2);
+    graph.addEdge(0, 3);
+    graph.addEdge(0, 4);
+    graph.addEdge(4, 5);
+    graph.addEdge(5, 6);
+
+    graph.BFS(0);
+    ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)
 ## DFS
-- Update later..
+- 시작 노드에서 한 방향으로 최대한 깊게 탐색한 후, 돌아와 다른 방향으로 깊이 탐색하는 방식
+- 예시 코드
+    ```javascript
+    class Graph {
+        constructor(numVertices) {
+            this.numVertices = numVertices;
+            this.matrix = Array.from({ length: numVertices }, () =>
+                new Array(numVertices).fill(0)
+            );
+        }
+
+        addEdge(start, end) {
+            this.matrix[start][end] = 1;
+            this.matrix[end][start] = 1;
+        }
+
+        DFS(start) {
+            const stack = [];
+            const visited = Array(this.numVertices).fill(false);
+
+            stack.push(start);
+            visited[start] = true;
+
+            while (stack.length > 0) {
+                const node = stack.pop();
+
+                console.log(node);
+
+                for (let i = 0; i < this.numVertices; i++) {
+                    if (this.matrix[node][i] === 1 && !visited[i]) {
+                        stack.push(i);
+                        visited[i] = true;
+                    }
+                }
+            }
+        }
+    }
+
+    const graph = new Graph(7);
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 2);
+    graph.addEdge(0, 3);
+    graph.addEdge(0, 4);
+    graph.addEdge(4, 5);
+    graph.addEdge(5, 6);
+
+    graph.DFS(0);
+    ```
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#algorithm)

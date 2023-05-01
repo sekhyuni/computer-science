@@ -7,7 +7,7 @@
 - [x] Queue
 - [ ] Linked List
 - [x] Hash Table
-- [ ] Graph
+- [x] Graph
 - [ ] Tree
 - [x] Heap
 
@@ -16,8 +16,8 @@
 - [x] Sorting
 - [ ] Recursion
 - [x] Dynamic Programming
-- [ ] BFS
-- [ ] DFS
+- [x] BFS
+- [x] DFS
 - [ ] Backtracking
 
 ## [Network](https://github.com/sekhyuni/computer-science/blob/main/network/README.md)
