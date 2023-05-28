@@ -21,6 +21,7 @@
 - [ ] Backtracking
 
 ## [Network](https://github.com/sekhyuni/computer-science/blob/main/network/README.md)
+- [x] OSI 7 Layers
 
 ## [Operating System](https://github.com/sekhyuni/computer-science/blob/main/operating-system/README.md)
 - [ ] Process and Thread
