@@ -3,7 +3,7 @@
 * [Array](#array)
 * [Stack](#stack)
 * [Queue](#queue)
-* [Linked List](#linked-list)
+* [Singly Linked List](#singly-linked-list)
 * [Hash Table](#hash-table)
 * [Graph](#graph)
 * [Tree](#tree)
@@ -173,9 +173,131 @@
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
-## Linked List
-- [선형 구조]
-- Update later..
+## Singly Linked List
+- [선형 구조] 각 노드가 데이터와 다음 노드를 가리키는 포인터를 가지고 한 줄로 연결되어 있는 구조
+- 특징
+    1. 데이터가 메모리 상에 연속적으로 저장되지 않음
+    1. 노드의 포인터가 다음 노드를 가리키고, 마지막 노드는 null을 가리킴
+    1. 삽입/제거 시, 해당 노드의 앞/뒤 노드의 포인터만 수정하면 되므로 배열에 비해 효율적. 단, 삽입/제거할 위치를 검색하는 시간은 별도
+- 구현
+    ```javascript
+    // 무엇을 구현할 것인가? Node, LinkedList(add, insertAt, removeFrom, insertAfter, removeAfter, indexOf)
+    class Node {
+        constructor(element) {
+            this.element = element;
+            this.next = null;
+        }
+    }
+
+    class LinkedList {
+        constructor() {
+            this.head = null;
+            this.size = 0;
+        }
+
+        add(element) {
+            const node = new Node(element);
+
+            if (!this.head) {
+                this.head = node;
+            } else {
+                let current = this.head;
+                while (current.next) {
+                    current = current.next;
+                }
+                current.next = node;
+            }
+            this.size++;
+        }
+
+        insertAt(element, index) {
+            if (index < 0 || index > this.size) {
+                return console.log("Please enter a valid index.");
+            } else {
+                const node = new Node(element);
+
+                if (index === 0) {
+                    node.next = this.head;
+                    this.head = node;
+                } else {
+                    let current = this.head;
+                    let prev = null;
+                    let i = 0;
+                    while (i < index) {
+                        prev = current;
+                        current = current.next;
+                        i++;
+                    }
+                    prev.next = node;
+                    node.next = current;
+                }
+                this.size++;
+            }
+        }
+
+        removeFrom(index) {
+            if (index < 0 || index >= this.size) {
+                return console.log("Please enter a valid index.");
+            } else {
+                let current = this.head;
+                let prev = current;
+                let i = 0;
+                if (index === 0) {
+                    this.head = current.next;
+                } else {
+                    while (i < index) {
+                        prev = current;
+                        current = current.next;
+                        i++;
+                    }
+                    prev.next = current.next;
+                }
+                this.size--;
+                return current.element;
+            }
+        }
+
+        insertAfter(node, element) {
+            if (!node) {
+                return console.log("Please provide a valid node.");
+            }
+            const newNode = new Node(element);
+            newNode.next = node.next;
+            node.next = newNode;
+            this.size++;
+        }
+        
+        removeAfter(node) {
+            if (!node || !node.next) {
+                return console.log("No node to remove.");
+            }
+            const removed = node.next;
+            node.next = removed.next;
+            this.size--;
+            return removed.element;
+        }
+
+        indexOf(element) {
+            let count = 0;
+            let current = this.head;
+            while (current) {
+                if (current.element === element) {
+                    return count;
+                }
+                count++;
+                current = current.next;
+            }
+            return -1;
+        }
+    }
+    ```
+- 시간 복잡도
+    |Data Structure|접근|검색|삽입|제거|
+    |:---:|:---:|:---:|:---:|:---:|
+    |Singly Linked List|O(n)|O(n)|O(n)|O(n)|
+        
+    \* 삽입/제거 시 해당 노드를 미리 알고 있는 경우 O(1)    
+        
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
@@ -185,8 +307,8 @@
     1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
 - 해시 충돌 해결 방법
     1. 분리 연결 방식
-        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Linked List 형식으로 저장하는 방식
-        - 단점: Linked List 크기가 커지면 시간 복잡도가 그만큼 증가
+        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Singly Linked List 형식으로 저장하는 방식
+        - 단점: Singly Linked List 크기가 커지면 시간 복잡도가 그만큼 증가
     1. 개방 주소 방식
         - 데이터를 삽입하려는 bucket이 이미 사용중인 경우 다른 bucket을 정해서 그 bucket에 데이터를 저장하는 방식
         - 선형 탐색, 제곱 탐색, 이중 해시와 같은 방법으로 해결
