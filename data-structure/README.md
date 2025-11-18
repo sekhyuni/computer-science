@@ -297,7 +297,6 @@
     |Singly Linked List|O(n)|O(n)|O(n)|O(n)|
         
     \* 삽입/제거 시 해당 노드를 미리 알고 있는 경우 O(1)    
-        
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)
