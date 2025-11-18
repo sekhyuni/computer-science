@@ -22,15 +22,11 @@ function reverseList(head: ListNode | null): ListNode | null {
   return prev;
 }
 
-const test1 = createLinkedList([1, 2, 3, 4, 5]);
-const result1 = reverseList(test1);
-console.log(`[${linkedListToArray(result1)}]`);
-const test2 = createLinkedList([1, 2]);
-const result2 = reverseList(test2);
-console.log(`[${linkedListToArray(result2)}]`);
-const test3 = createLinkedList([]);
-const result3 = reverseList(test3);
-console.log(`[${linkedListToArray(result3)}]`);
+console.log(
+  `[${linkedListToArray(reverseList(createLinkedList([1, 2, 3, 4, 5])))}]`
+);
+console.log(`[${linkedListToArray(reverseList(createLinkedList([1, 2])))}]`);
+console.log(`[${linkedListToArray(reverseList(createLinkedList([])))}]`);
 
 function createLinkedList(arr: number[]): ListNode | null {
   if (arr.length === 0) return null;
