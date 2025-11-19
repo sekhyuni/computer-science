@@ -4,6 +4,7 @@
 * [Stack](#stack)
 * [Queue](#queue)
 * [Singly Linked List](#singly-linked-list)
+* [Doubly Linked List](#doubly-linked-list)
 * [Hash Table](#hash-table)
 * [Graph](#graph)
 * [Tree](#tree)
@@ -295,8 +296,182 @@
     |Data Structure|접근|검색|삽입|제거|
     |:---:|:---:|:---:|:---:|:---:|
     |Singly Linked List|O(n)|O(n)|O(n)|O(n)|
+
+[메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
+[맨 위로 가기](#data-structure)
+## Doubly Linked List
+- [선형 구조] 각 노드가 데이터와 이전 노드를 가리키는 포인터, 다음 노드를 가리키는 포인터를 가지고 양방향으로 연결되어 있는 구조
+- 특징
+    1. 데이터가 메모리 상에 연속적으로 저장되지 않음
+    1. 노드의 포인터가 이전/다음 노드를 가리키고, 첫 노드의 prev는 null, 마지막 노드의 next는 null을 가리킴
+    1. 양방향 탐색이 가능하여 Singly Linked List보다 유연하지만, 포인터를 하나 더 저장해야 하므로 메모리를 더 사용함
+    1. 삽입/제거 시, 해당 노드의 앞/뒤 노드의 포인터만 수정하면 되므로 배열에 비해 효율적. 단, 삽입/제거할 위치를 검색하는 시간은 별도
+- 구현
+    ```javascript
+    // 무엇을 구현할 것인가? Node, DoublyLinkedList(add, insertAt, removeFrom, insertAfter, removeAfter, removeBefore, indexOf)
+    class Node {
+        constructor(element) {
+            this.element = element;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    class DoublyLinkedList {
+        constructor() {
+            this.head = null;
+            this.tail = null;
+            this.size = 0;
+        }
+
+        add(element) {
+            const node = new Node(element);
+
+            if (!this.head) {
+                this.head = node;
+                this.tail = node;
+            } else {
+                this.tail.next = node;
+                node.prev = this.tail;
+                this.tail = node;
+            }
+            this.size++;
+        }
+
+        insertAt(element, index) {
+            if (index < 0 || index > this.size) {
+                return console.log("Please enter a valid index.");
+            }
+
+            const node = new Node(element);
+
+            if (index === 0) {
+                if (!this.head) {
+                    this.head = node;
+                    this.tail = node;
+                } else {
+                    node.next = this.head;
+                    this.head.prev = node;
+                    this.head = node;
+                }
+            } else if (index === this.size) {
+                this.tail.next = node;
+                node.prev = this.tail;
+                this.tail = node;
+            } else {
+                let current = this.head;
+                let i = 0;
+                while (i < index) {
+                    current = current.next;
+                    i++;
+                }
+                node.prev = current.prev;
+                node.next = current;
+                current.prev.next = node;
+                current.prev = node;
+            }
+            this.size++;
+        }
+
+        removeFrom(index) {
+            if (index < 0 || index >= this.size) {
+                return console.log("Please enter a valid index.");
+            }
+
+            let current;
+            if (index === 0) {
+                current = this.head;
+                if (this.size === 1) {
+                    this.head = null;
+                    this.tail = null;
+                } else {
+                    this.head = this.head.next;
+                    this.head.prev = null;
+                }
+            } else if (index === this.size - 1) {
+                current = this.tail;
+                this.tail = this.tail.prev;
+                this.tail.next = null;
+            } else {
+                current = this.head;
+                let i = 0;
+                while (i < index) {
+                    current = current.next;
+                    i++;
+                }
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+            this.size--;
+            return current.element;
+        }
+
+        insertAfter(node, element) {
+            if (!node) {
+                return console.log("Please provide a valid node.");
+            }
+            const newNode = new Node(element);
+            newNode.next = node.next;
+            newNode.prev = node;
+            if (node.next) {
+                node.next.prev = newNode;
+            } else {
+                this.tail = newNode;
+            }
+            node.next = newNode;
+            this.size++;
+        }
         
-    \* 삽입/제거 시 해당 노드를 미리 알고 있는 경우 O(1)    
+        removeAfter(node) {
+            if (!node || !node.next) {
+                return console.log("No node to remove.");
+            }
+            const removed = node.next;
+            if (removed.next) {
+                removed.next.prev = node;
+                node.next = removed.next;
+            } else {
+                this.tail = node;
+                node.next = null;
+            }
+            this.size--;
+            return removed.element;
+        }
+        
+        removeBefore(node) {
+            if (!node || !node.prev) {
+                return console.log("No node to remove.");
+            }
+            const removed = node.prev;
+            if (removed.prev) {
+                removed.prev.next = node;
+                node.prev = removed.prev;
+            } else {
+                this.head = node;
+                node.prev = null;
+            }
+            this.size--;
+            return removed.element;
+        }
+
+        indexOf(element) {
+            let count = 0;
+            let current = this.head;
+            while (current) {
+                if (current.element === element) {
+                    return count;
+                }
+                count++;
+                current = current.next;
+            }
+            return -1;
+        }
+    }
+    ```
+- 시간 복잡도
+    |Data Structure|접근|검색|삽입|제거|
+    |:---:|:---:|:---:|:---:|:---:|
+    |Doubly Linked List|O(n)|O(n)|O(n)|O(n)|
 
 [메인으로 가기](https://github.com/sekhyuni/computer-science)</br>
 [맨 위로 가기](#data-structure)

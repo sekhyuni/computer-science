@@ -6,6 +6,7 @@
 - [x] Stack
 - [x] Queue
 - [x] Singly Linked List
+- [x] Doubly Linked List
 - [x] Hash Table
 - [x] Graph
 - [ ] Tree
