@@ -13,7 +13,7 @@ class ListNode {
 function reverseList(head: ListNode | null): ListNode | null {
   let prev: ListNode | null = null;
   let curr = head;
-  while (curr != null) {
+  while (curr !== null) {
     const temp = curr.next;
     curr.next = prev;
     prev = curr;
