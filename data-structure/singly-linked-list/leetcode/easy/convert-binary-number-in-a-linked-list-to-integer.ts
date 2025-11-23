@@ -12,10 +12,11 @@ class ListNode {
 
 function getDecimalValue(head: ListNode | null): number {
   let result = 0;
-  while (head !== null) {
+  let curr: ListNode | null = head;
+  while (curr !== null) {
     result *= 2;
-    result += head.val;
-    head = head.next;
+    result += curr.val;
+    curr = curr.next;
   }
   return result;
 }
