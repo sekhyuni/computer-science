@@ -16,35 +16,25 @@ function mergeInBetween(
   b: number,
   list2: ListNode | null
 ): ListNode | null {
-  let result = new ListNode();
-
-  let curr = list1;
-  let count = 0;
-  while (curr !== null && count <= b) {
-    if (count <= a) {
-      let _curr = result;
-      while (_curr.next) {
-        _curr = _curr.next;
-      }
-
-      if (count === a) {
-        _curr.next = list2;
-      } else {
-        _curr.next = new ListNode(curr.val);
-      }
-    }
-
-    curr = curr.next;
-    count++;
+  let prevANodeOfList1: ListNode | null = list1;
+  for (let i = 0; prevANodeOfList1 !== null && i < a - 1; i++) {
+    prevANodeOfList1 = prevANodeOfList1.next;
   }
 
-  let _curr = result;
-  while (_curr.next) {
-    _curr = _curr.next;
+  let nextBNodeOfList1: ListNode | null = list1;
+  for (let i = 0; nextBNodeOfList1 !== null && i <= b; i++) {
+    nextBNodeOfList1 = nextBNodeOfList1.next;
   }
-  _curr.next = curr;
 
-  return result.next;
+  let lastNodeOfList2: ListNode | null = list2;
+  while (lastNodeOfList2 !== null && lastNodeOfList2.next !== null) {
+    lastNodeOfList2 = lastNodeOfList2.next;
+  }
+
+  if (prevANodeOfList1) prevANodeOfList1.next = list2;
+  if (lastNodeOfList2) lastNodeOfList2.next = nextBNodeOfList1;
+
+  return list1;
 }
 
 console.log(
