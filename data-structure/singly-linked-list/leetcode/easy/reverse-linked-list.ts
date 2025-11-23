@@ -14,10 +14,10 @@ function reverseList(head: ListNode | null): ListNode | null {
   let prev: ListNode | null = null;
   let curr = head;
   while (curr !== null) {
-    const temp = curr.next;
+    const nextListNode = curr.next;
     curr.next = prev;
     prev = curr;
-    curr = temp;
+    curr = nextListNode;
   }
   return prev;
 }
