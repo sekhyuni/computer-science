@@ -14,8 +14,8 @@ function mergeTwoLists(
   list1: ListNode | null,
   list2: ListNode | null
 ): ListNode | null {
-  const dummy = new ListNode();
-  let curr = dummy;
+  const dummyHead = new ListNode();
+  let curr: ListNode = dummyHead;
 
   while (list1 !== null && list2 !== null) {
     if (list1.val > list2.val) {
@@ -33,7 +33,7 @@ function mergeTwoLists(
 
   curr.next = list1 !== null ? list1 : list2;
 
-  return dummy.next;
+  return dummyHead.next;
 }
 
 console.log(
@@ -56,14 +56,14 @@ function mergeTwoListsMySolution(
   list1: ListNode | null,
   list2: ListNode | null
 ): ListNode | null {
-  let result = null;
+  let result: ListNode | null = null;
 
   while (list1 !== null && list2 !== null) {
     if (list1.val > list2.val) {
       const newListNode = new ListNode(list2.val);
 
       if (result) {
-        let curr = result;
+        let curr: ListNode = result;
         while (curr.next) {
           curr = curr.next;
         }
@@ -77,7 +77,7 @@ function mergeTwoListsMySolution(
       const newListNode = new ListNode(list1.val);
 
       if (result) {
-        let curr = result;
+        let curr: ListNode = result;
         while (curr.next) {
           curr = curr.next;
         }
