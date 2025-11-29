@@ -481,12 +481,12 @@
     1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
 - 해시 충돌 해결 방법
     1. 분리 연결 방식
-        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Linked List 형태로 저장하는 방식
+        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Linked List 형태로 데이터(key/value)를 저장하는 방식
         - 보통 Singly Linked List로 구현되며, 삭제 연산이 중요한 경우 Doubly Linked List가 될 수도 있음
         - 단점: Linked List 크기가 커지면 시간 복잡도가 그만큼 증가
     1. 개방 주소 방식
-        - 데이터를 삽입하려는 bucket이 이미 사용중인 경우 다른 bucket을 정해서 그 bucket에 데이터를 저장하는 방식
-        - 선형 탐색, 제곱 탐색, 이중 해시와 같은 방법으로 해결
+        - 데이터를 삽입하려는 bucket이 이미 사용중인 경우 다른 bucket을 정해서 그 bucket에 데이터(key/value)를 저장하는 방식
+        - 선형 탐사, 제곱 탐사, 이중 해싱와 같은 방법으로 해결
         - 단점: 2차 충돌 발생 가능성 존재
 - HashTable vs HashMap
     - HashTable은 Thread-Safe하고, HashMap은 그렇지 않음. 따라서, Multi-Thread 환경이 아니라면, HashTable은 HashMap보다 성능이 떨어진다는 단점이 있음
