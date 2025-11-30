@@ -478,7 +478,7 @@
 ## Hash Table
 - [비선형 구조] key/value 쌍으로 데이터가 저장되는 자료구조이며, key를 입력받는 Hash 함수를 통해 index 값을 얻어와서 bucket에 저장함
 - 적재율(Load Factor, α)
-    - HashTable에 저장된 유효한 데이터 수 / bucket의 크기
+    - Hash Table에 저장된 유효한 데이터 수 / bucket의 크기
 - 해시 충돌
     1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
 - 해시 충돌 해결 방법
