@@ -478,17 +478,17 @@
 ## Hash Table
 - [비선형 구조] key/value 쌍으로 데이터가 저장되는 자료구조이며, key를 입력받는 Hash 함수를 통해 index 값을 얻어와서 bucket에 저장함
 - 적재율(Load Factor, α)
-    - Hash Table에 저장된 유효한 데이터 수 / bucket의 크기
+    - Hash Table에 저장된 유효한 데이터 수 / bucket array의 크기
 - 해시 충돌
-    1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
+    1. 서로 다른 key가 동일한 index로 해시되는 것을 말하며, bucket array의 크기가 N인 경우 1/N의 확률로 해시 충돌이 발생함
 - 해시 충돌 해결 방법
     1. 분리 연결 방식
-        - key/value 쌍이 bucket의 동일한 index로 해시되는 방식이며, Linked List 형태로 데이터(key/value)를 저장하는 방식
+        - key/value 쌍이 bucket array의 동일한 index로 해시되는 방식이며, Linked List 형태로 데이터(key/value)를 저장하는 방식
         - 보통 Singly Linked List로 구현되며, 삭제 연산이 중요한 경우 Doubly Linked List가 될 수도 있음
         - 한계
             - Linked List 크기가 커지면 시간 복잡도가 그만큼 증가
     1. 개방 주소 방식
-        - 데이터를 삽입하려는 bucket이 이미 사용 중인 경우 다른 slot을 정해서 그 slot에 데이터(key/value)를 저장하는 방식
+        - 데이터를 삽입하려는 bucket이 이미 사용 중인 경우 다른 bucket을 정해서 그 bucket에 데이터(key/value)를 저장하는 방식
         - 선형 탐사, 제곱 탐사, 이중 해싱과 같은 방법으로 해결
         - 한계
             - 데이터 삭제 시 더미 마커를 사용해야 하므로 비효율적임 (더미 마커가 쌓일수록 탐사 시간이 그만큼 더 지연될 수 있으므로)
@@ -497,7 +497,7 @@
             - 제곱 탐사는 2차 군집화 현상이 발생할 수 있음 (선형 탐사의 단점은 완화)
             - 이중 해싱은 구현이 복잡하며, 개방 주소 방식의 공통적인 한계는 여전히 지니고 있음 (제곱 탐사의 단점은 완화)
 - 리해싱
-    - 보통 기존 bucket 크기의 2배가량으로 늘리면서 Hash 함수의 로직을 변경함
+    - 보통 기존 bucket array 크기의 2배가량으로 늘리면서 Hash 함수의 로직을 변경함
     - 보통 적재율(Load Factor, α)의 임계점이 낮은 순서대로 빨리 일어남 (더미 마커 비율 등 다른 요인도 존재)
         |방식|적재율(Load Factor, α)의 임계점|
         |:--:|:--:|
