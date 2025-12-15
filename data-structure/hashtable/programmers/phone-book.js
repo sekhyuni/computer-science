@@ -1,10 +1,12 @@
 function solution(phone_book) {
   const m = new Map();
 
+  // Time Complexity: O(n * m), n === 1,000,000, m === 20
   for (let i = 0; i < phone_book.length; i++) {
     m.set(phone_book[i], i);
   }
 
+  // Time Complexity: O(n * m^2), n === 1,000,000, m === 20
   for (let i = 0; i < phone_book.length; i++) {
     let str = "";
 
@@ -16,6 +18,7 @@ function solution(phone_book) {
     }
   }
 
+  // Total Time Complexity: O(n * m^2), n === 1,000,000, m === 20
   return true;
 }
 
