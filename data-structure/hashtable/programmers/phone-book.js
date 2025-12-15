@@ -6,19 +6,20 @@ function solution(phone_book) {
     m.set(phone_book[i], i); // Time Complexity: O(m), m === 20
   }
 
-  // Time Complexity: O(n * m^2), n === 1,000,000, m === 20
+  // Time Complexity: O(n * m^3), n === 1,000,000, m === 20
   for (let i = 0; i < phone_book.length; i++) {
     let str = "";
 
+    // Time Complexity: O(m^3), m === 20
     for (let j = 0; j < phone_book[i].length; j++) {
-      str += phone_book[i][j]; // Time Complexity: O(m), m === 20
+      str += phone_book[i][j]; // Time Complexity: O(m^2), m === 20
 
       const v = m.get(str); // Time Complexity: O(m), m === 20
       if (typeof v === "number" && v !== i) return false;
     }
   }
 
-  // Total Time Complexity: O(n * m^2), n === 1,000,000, m === 20
+  // Total Time Complexity: O(n * m^3), n === 1,000,000, m === 20
   return true;
 }
 
