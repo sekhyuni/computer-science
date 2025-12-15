@@ -3,7 +3,7 @@ function solution(phone_book) {
 
   // Time Complexity: O(n * m), n === 1,000,000, m === 20
   for (let i = 0; i < phone_book.length; i++) {
-    m.set(phone_book[i], i);
+    m.set(phone_book[i], i); // Time Complexity: O(m), m === 20
   }
 
   // Time Complexity: O(n * m^2), n === 1,000,000, m === 20
@@ -11,9 +11,9 @@ function solution(phone_book) {
     let str = "";
 
     for (let j = 0; j < phone_book[i].length; j++) {
-      str += phone_book[i][j];
+      str += phone_book[i][j]; // Time Complexity: O(m), m === 20
 
-      const v = m.get(str);
+      const v = m.get(str); // Time Complexity: O(m), m === 20
       if (typeof v === "number" && v !== i) return false;
     }
   }
